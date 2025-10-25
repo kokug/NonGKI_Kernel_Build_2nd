@@ -38,6 +38,11 @@ runs:
           cd $GITHUB_WORKSPACE/device_kernel
 
           echo "CONFIG_KSU_SUSFS=y" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
+          echo "CONFIG_MODULE_SIG=n" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
+          echo "CONFIG_MODULE_SIG_FORCE=n" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
+          echo "CONFIG_MODULE_SIG_ALL=n" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}"
+          echo "CONFIG_MODULE_SIG_SHA256=n" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
+          echo "CONFIG_IKCONFIG_PROC=n" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
           echo "CONFIG_KSU_SUSFS_HAS_MAGIC_MOUNT=y" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
           echo "CONFIG_KSU_SUSFS_SUS_PATH=y" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
           echo "CONFIG_KSU_SUSFS_SUS_MOUNT=y" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
